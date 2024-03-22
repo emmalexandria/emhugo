@@ -1,0 +1,24 @@
+<footer>
+  <hr>
+  <div style="display:flex">
+    {{- range $index, $key := .Site.Params.Social -}}
+    <a class="soc" id="{{ $key.name }}" href="{{ $key.url }}" rel="me" title="{{ $key.name }}"></a>
+    <script>
+      //She's a little janky, but she lets me avoid using feather icons
+      let link = document.getElementById({{ $key.name }})
+      link.innerHTML = {{ $key.icon }}
+    </script>
+    <span class="border"></span>
+    {{- end -}}
+    <div class="footer-info">
+      {{ dateFormat "2006" now }} {{ with .Site.Copyright }} {{ . }} {{ end }}
+    </div>
+  </div>
+
+</footer>
+
+{{- if (isset .Site.Params "social") -}}
+<script>
+  feather.replace()
+</script>
+{{- end -}}
