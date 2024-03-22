@@ -5,8 +5,8 @@
     <a class="soc" id="{{ $key.name }}" href="{{ $key.url }}" rel="me" title="{{ $key.name }}"></a>
     <script>
       //She's a little janky, but she lets me avoid using feather icons
-      let link = document.getElementById({{ $key.name }})
-      link.innerHTML = {{ $key.icon }}
+      let link = document.getElementById("{{ $key.name }}")
+      link.innerHTML = "{{ $key.icon }}"
     </script>
     <span class="border"></span>
     {{- end -}}
@@ -16,9 +16,3 @@
   </div>
 
 </footer>
-
-{{- if (isset .Site.Params "social") -}}
-<script>
-  feather.replace()
-</script>
-{{- end -}}
