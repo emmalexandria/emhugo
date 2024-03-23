@@ -66,6 +66,11 @@ a:hover {
   color: var(--darkTextColor);
 }
 
+ol,
+ul {
+  font-family: 'Open Sans';
+}
+
 ul {
   list-style: none;
 
@@ -318,7 +323,12 @@ svg {
   -webkit-overflow-scrolling: touch;
 }
 
+.highlight pre {
+  border-radius: 0.25rem;
+}
+
 .highlight pre code[class*="language-"] {
+
   -webkit-overflow-scrolling: touch;
 }
 
@@ -340,7 +350,7 @@ svg {
 .highlight pre code[class="language-js"]::before {
   content: "js";
   background: #f7df1e;
-  color: black;
+  color: var(--textColor);
 }
 
 .highlight pre code[class*='language-yml']::before,
@@ -354,8 +364,8 @@ svg {
 .highlight pre code[class*='language-bash']::before,
 .highlight pre code[class*='language-sh']::before {
   content: 'shell';
-  background: green;
-  color: white
+  background: lightgreen;
+  color: var(--textColor);
 }
 
 .highlight pre code[class*='language-json']::before {
@@ -383,7 +393,13 @@ svg {
   color: royalblue;
 }
 
-.highlight pre code[class*='language-md']::before,
+.highlight pre code[class*='language-rs']::before,
+.highlight pre code[class*='language-rust']::before {
+  content: 'Rust';
+  background: orangered;
+  color: var(--backgroundColor);
+}
+
 .highlight pre code[class*='language-md']::before {
   content: 'Markdown';
   background: royalblue;
