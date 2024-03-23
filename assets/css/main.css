@@ -91,6 +91,7 @@ img {
   border: 3px solid #ececec;
   border-radius: 0.2rem;
   max-width: 100%;
+  height: auto;
 }
 
 figure {
@@ -98,10 +99,7 @@ figure {
   display: inline-block;
   margin: 0;
   max-width: 100%;
-}
-
-figure img {
-  max-height: 500px;
+  height: auto;
 }
 
 @media screen and (min-width: 600px) {
