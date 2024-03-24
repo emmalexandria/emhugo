@@ -45,6 +45,14 @@ hr {
   margin: 1em 0
 }
 
+hr.post-divider {
+  border-top: 1px dashed var(--textSecondary);
+}
+
+hr.post-divider:last-child {
+  border-top: none;
+}
+
 a {
   border-bottom: 3px solid var(--maincolor);
   color: inherit;
