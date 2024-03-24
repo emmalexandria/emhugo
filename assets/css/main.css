@@ -88,8 +88,7 @@ ul>li::before {
 
 /* Images */
 img {
-  border: 3px solid #ececec;
-  border-radius: 0.2rem;
+  border-radius: 0.5rem;
   max-width: 100%;
   height: auto;
 }
@@ -108,13 +107,13 @@ figure {
   }
 }
 
-figure h4 {
+figure p {
   font-size: 1rem;
   margin: 0;
   margin-bottom: 1em;
 }
 
-figure h4::before {
+figure p::before {
   content: '↳ ';
 }
 
@@ -319,11 +318,11 @@ svg {
 .highlight {
   position: relative;
   -webkit-overflow-scrolling: touch;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
 }
 
 .highlight pre {
-  border-radius: 1rem;
+  border-radius: 0.5rem;
 }
 
 .highlight pre code[class*="language-"] {
