@@ -3,12 +3,13 @@
 
 	{{- $title := ( .Title ) -}}
 	{{- $siteTitle := ( .Site.Title ) -}}
+	<meta name="author" content="Emma Alexandria" />
 	{{- if .IsHome -}}
-	<meta name="description" content="A simple blog for a simple minded developer.">
-	<title>{{ $siteTitle }} | Home </title>
+	<meta name="keywords" content="Programming, Development, Tech, Blog" />
+	<title>Home - {{ $siteTitle }}</title>
 	{{- else -}}
-	<meta name="description" content="{{.Description}}">
-	<title>{{ $title }} - {{ $siteTitle }}</title>
+	<meta name="keywords" content="{{with .Params.tags}}{{delimit . " , "}}{{end}}" />
+	<title>{{ $title }}</title>
 	{{- end -}}
 
 	{{- if isset .Site.Params "favicon" -}}

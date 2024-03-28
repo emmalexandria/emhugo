@@ -1,7 +1,5 @@
 :root {
   --maincolor: #EC5B13;
-  --bordercl: rebeccapurple;
-  --callouctcolor: dodgerblue;
   --hovercolor: #EC5B13;
   --darkMainColor: #47e26d;
   --darkHoverColor: #47e26d;
@@ -16,8 +14,8 @@
 html {
   color: var(--textColor);
   font-family: 'Roboto Mono', monospace;
-  font-size: 15px;
-  line-height: 1.6em
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
 body {
@@ -66,26 +64,44 @@ a:hover {
 
 ol,
 ul {
-  font-family: 'Open Sans'
-}
-
-ul {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans';
   list-style: none;
-  padding-left: 2ch
+  display: grid;
+  padding-left: 1rem;
 }
 
-ul li {
-  text-indent: -2ch
+ol {
+  counter-reset: orderedlist;
 }
 
-ul>li::before {
-  content: '- ';
-  font-weight: 700
+li::before {
+  margin-right: 0.4rem;
 }
 
-ul :is(li, ul):has(a) {
-  margin-top: .5rem;
-  margin-bottom: .5rem
+ul li::before {
+  content: ">";
+  font-weight: 800;
+  font-size: large;
+}
+
+.faint {
+  color: var(--textSecondary)
+}
+
+ol li::before {
+  counter-increment: orderedlist;
+  content: counters(orderedlist, ".");
+  font-weight: 600;
+}
+
+li:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+li :is(ul, ol) {
+  margin-top: 1rem;
 }
 
 img {
@@ -245,18 +261,6 @@ article .title {
   margin-bottom: 1em
 }
 
-.tags li::before {
-  content: "- "
-}
-
-.tags a {
-  border-bottom: 3px solid var(--maincolor)
-}
-
-.tags a:hover {
-  color: #fff;
-  background-color: var(--hovercolor)
-}
 
 svg {
   max-height: 15px
@@ -348,8 +352,17 @@ svg {
 
 table {
   border-spacing: 0;
-  border-collapse: collapse
+  border-collapse: collapse;
 }
+
+th,
+td {
+  border: 1px solid var(--textColor);
+  padding: 0.5rem;
+  text-align: left;
+  word-wrap: break-word;
+}
+
 
 #dark-mode-toggle {
   user-select: none;

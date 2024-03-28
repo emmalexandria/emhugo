@@ -27,6 +27,10 @@ hr.post-divider {
   color: var(--darkTextSecondary)
 }
 
+.faint {
+  color: var(--darkTextSecondary)
+}
+
 time {
   color: var(--darkTextSecondary)
 }
@@ -125,6 +129,12 @@ hr {
 .highlight pre code[class*=language-]::before {
   color: var(--darkBackgroundColor)
 }
+
+th,
+td {
+  border: 1px solid var(--darkTextColor);
+}
+
 
 #dark-mode-toggle {
   border-bottom: 3px solid var(--darkMainColor);
